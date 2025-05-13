@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[公司名称] - 专业[行业领域]服务</title>
+    
+    <!-- 核心样式 -->
+    <style>
+        /* 基础变量 */
+        :root {
+            --primary-color: #2c3e50;    /* 主色调 */
+            --secondary-color: #3498db;  /* 辅助色 */
+            --text-color: #333;           /* 正文颜色 */
+            --light-bg: #f8f9fa;          /* 浅色背景 */
+        }
+
+        /* 基础样式 */
+        body {
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* 导航栏样式 */
+        .navbar {
+            transition: all 0.3s;
+            border-bottom: 2px solid var(--secondary-color);
+        }
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        /* 主视觉区 */
+        .hero-section {
+            background: linear-gradient(rgba(44, 62, 80, 0.9), 
+                        rgba(44, 62, 80, 0.8)),
+                        url('images/hero-bg.jpg') center/cover;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+
+        /* 通用标题样式 */
+        .section-title {
+            position: relative;
+            padding-bottom: 15px;
+            margin: 2rem 0;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--secondary-color);
+        }
+
+        /* 服务卡片 */
+        .service-card {
+            border: none;
+            transition: transform 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .hero-section {
+                height: 60vh;
+                text-align: center;
+            }
+        }
+		
+		/* 产品展示样式 */
+		.product-showcase img {
+		    transition: transform 0.3s;
+		    border: 2px solid var(--secondary-color);
+		}
+		
+		.product-item {
+		    position: relative;
+		    overflow: hidden;
+		    border-radius: 8px;
+		    transition: all 0.3s;
+		}
+		
+		.product-item:hover {
+		    transform: translateY(-5px);
+		    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+		}
+		
+		.product-item img {
+		    height: 120px;
+		    object-fit: cover;
+		    border: 1px solid #ddd;
+		}
+		
+		.processing-showcase {
+		    position: relative;
+		    overflow: hidden;
+		}
+		
+		.processing-showcase img {
+		    transition: transform 0.5s;
+		}
+		
+		.processing-showcase:hover img {
+		    transform: scale(1.1);
+		}
+    </style>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- ======= 导航栏 ======= -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="images\logo.jpg" alt="Logo" width="40" class="d-inline-block align-text-top">
+                广西隆森堂中药材有限公司
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">首页</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">关于我们</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">服务项目</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">联系我们</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ======= 主视觉区 ======= -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="display-4 mb-4">专业中药材解决方案</h1>
+                <p class="lead">致力于为客户创造卓越价值</p>
+                <a href="#contact" class="btn btn-primary btn-lg">立即咨询</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= 关于我们 ======= -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">关于我们</h2>
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <img src="images/gs.jpg" alt="广西隆森堂中药材有限公司" class="img-fluid rounded">
+                </div>
+                <div class="col-md-6">
+                    <h3 class="mb-4">公司简介</h3>
+                    <p>成立于2018年，专注于郁金，莪术，百部，钩藤等中药材生产加工，采用科学质量体系管理，通过公司+基地+合作社+农户模式推动种植标准化。公司位于广西玉林市福绵区大楼村，注册资本300万元，为成员提供种植技术，购销及初级加工，不但为客户公司可提供代加工，中药材信息咨询与仓储服务，还形成种植，加工，销售全链条，产品销往国内外市场，推动中药材产业化发展。</p>
+                    <ul class="list-unstyled">
+                        <li>✓ 行业经验：[7]年+</li>
+                        <li>✓ 服务客户：[10000]+</li>
+                        <li>✓ 专业团队：[100]+</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= 服务项目 ======= -->
+    <section id="services" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">核心服务</h2>
+            <div class="row g-4">
+                <!-- 一般项目 -->
+                <div class="col-md-4">
+                    <div class="card service-card h-100">
+                        <div class="card-body text-center">
+                            <div class="icon-box mb-3">
+                                <i class="fas fa-leaf fa-3x text-primary"></i>
+                            </div>
+                            <h5>中药材种植</h5>
+                            <div class="product-showcase">
+                                <img src="images/planting.jpg" alt="中药材种植" class="img-fluid rounded mb-3">
+                                <p class="text-start">公司采用"公司+基地+合作社+农户"模式，推广标准化种植技术...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- 产品介绍 -->
+                <div class="col-md-4">
+                    <div class="card service-card h-100">
+                        <div class="card-body text-center">
+                            <div class="icon-box mb-3">
+                                <i class="fas fa-capsules fa-3x text-primary"></i>
+                            </div>
+                            <h5>核心产品</h5>
+                            <div class="row g-3">
+                                <!-- 产品1 -->
+                                <div class="col-6">
+                                    <div class="product-item">
+                                        <img src="images/yu-jin.jpg" alt="隆森堂郁金" 
+                                             class="img-fluid rounded mb-2">
+                                        <h6>郁金</h6>
+                                    </div>
+                                </div>
+                                <!-- 产品2 -->
+                                <div class="col-6">
+                                    <div class="product-item">
+                                        <img src="images/e-zhu.jpg" alt="隆森堂莪术" 
+                                             class="img-fluid rounded mb-2">
+                                        <h6>莪术</h6>
+                                    </div>
+                                </div>
+                                <!-- 产品3 -->
+                                <div class="col-6">
+                                    <div class="product-item">
+                                        <img src="images/bai-bu.jpg" alt="隆森堂百部" 
+                                             class="img-fluid rounded mb-2">
+                                        <h6>百部</h6>
+                                    </div>
+                                </div>
+                                <!-- 产品4 -->
+                                <div class="col-6">
+                                    <div class="product-item">
+                                        <img src="images/gou-teng.jpg" alt="隆森堂钩藤" 
+                                             class="img-fluid rounded mb-2">
+                                        <h6>钩藤</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- 加工服务 -->
+                <div class="col-md-4">
+                    <div class="card service-card h-100">
+                        <div class="card-body text-center">
+                            <div class="icon-box mb-3">
+                                <i class="fas fa-industry fa-3x text-primary"></i>
+                            </div>
+                            <h5>加工服务</h5>
+                            <div class="processing-showcase">
+                                <img src="images/processing.jpg" alt="药材加工" class="img-fluid rounded mb-3">
+                                <p class="text-start">提供专业中药材初加工、仓储及代加工服务。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ======= 联系我们 ======= -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">联系我们</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="contact-info">
+                        <h4>广西隆森堂中药材有限公司</h4>
+                        <p><i class="fas fa-map-marker-alt"></i> 公司地址:广西壮族自治区玉林市福绵区新桥镇大楼村原塘坪砖厂</p>
+                        <p><i class="fas fa-phone"></i> 联系电话:13197754066</p>
+                        <p><i class="fas fa-envelope"></i> 电子邮箱:1603522608@qq.com</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <form id="contactForm">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="您的姓名" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="电子邮箱" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="5" placeholder="留言内容" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">发送消息</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= 页脚 ======= -->
+    <footer class="py-4 bg-dark text-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>快速链接</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#about" class="text-light">关于我们</a></li>
+                        <li><a href="#services" class="text-light">服务项目</a></li>
+                        <li><a href="#contact" class="text-light">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 text-end">
+                    <p>&copy; 广西隆森堂中药材有限公司</p>
+                    <div class="social-links">
+                        <a href="#" class="text-light mx-2"><i class="fab fa-weixin"></i></a>
+                        <a href="#" class="text-light mx-2"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-light mx-2"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 脚本依赖 -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+
+    <script>
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // 导航栏滚动效果
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            window.scrollY > 50 ? 
+                navbar.classList.add('shadow-sm', 'bg-white') : 
+                navbar.classList.remove('shadow-sm', 'bg-white');
+        });
+
+        // 表单提交处理
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // 这里可以添加AJAX提交逻辑
+            alert('您的留言已提交，我们会尽快联系您！');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
